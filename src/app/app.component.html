@@ -1,0 +1,72 @@
+
+
+<div class="container">
+  <h3 class="title"> Registration Form - " User Details !!! "</h3>
+  <br><br>
+  <form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm" > 
+    <div class="row">
+      <div class="row col-sm-5">
+        <div class="form-group">
+          <label for="firstname">FirstName</label>
+          <input type="text" id="firstname" name="firstname" ngModel class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="lastname">LastName</label>
+          <input type="text" id="lastname" name="lastname" ngModel class="form-control">
+        </div> 
+         
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" ngModel class="form-control" required email #email="ngModel">
+          <span class="help-block" *ngIf="!email.valid && email.touched">Please enter valid email !</span>
+        </div>
+        
+        <div class="form-group">
+          <label for="gender">Gender</label>&nbsp;&nbsp;&nbsp;
+          <input type="radio" value="male" name="gender" ngModel> Male
+          <input type="radio" value="female" name="gender" ngModel> Female
+        </div>
+        
+        <div class="form-group">
+          <label for="isMarried">Married</label>&nbsp;&nbsp;&nbsp;
+          <input type="checkbox" name="isMarried" ngModel>
+        </div>
+    
+        <div class="row"></div>
+        <div class="row col-sm">
+          <div class="form-group" ngModelGroup="address">
+           <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country" name="country" ngModel class="form-control">
+              <option *ngFor="let c of countryList">
+                {{ c.countryname }}
+              </option>
+            </select>
+           </div>
+           
+           <div class="form-group">
+            <label for="city">City</label>
+            <input type="text"  name="city" ngModel class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text"  name="street" ngModel class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for="pincode">Pincode</label>
+            <input type="text"  name="pincode" ngModel class="form-control">
+          </div>
+          </div>
+          
+          <div class="form-group">
+            <button type="submit" cursor="pointer" class="btn btn-success" [disabled]="!userForm.valid">Submit</button>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

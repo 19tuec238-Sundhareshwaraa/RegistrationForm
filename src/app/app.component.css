@@ -1,0 +1,25 @@
+h3{
+    color: black;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 5px;
+
+}
+
+.title{
+    text-align: center;
+    vertical-align: bottom;
+    background-color: lightskyblue;
+    height: 50px;
+    padding-top: 5px;
+    
+}
+
+.container{
+    background-color: aliceblue;font-family: 'Times New Roman', Times, serif;
+   
+
+}
+.form-control.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
